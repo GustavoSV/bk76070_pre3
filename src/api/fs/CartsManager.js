@@ -46,7 +46,6 @@ class CartsManager {
    * @returns elemento del carrito agregado
    */
   async createCart({ products }) {
-
     if (!Array.isArray(products)) {
       throw new Error('Los productos deben estar en un Array');
     }
