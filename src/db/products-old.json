@@ -1,0 +1,68 @@
+[
+  {
+    "id": "9deeb904-786d-4670-99c9-379735f9f4be",
+    "title": "Mesa",
+    "description": "Mesa dominguera de 6 puestos",
+    "code": "MESA79",
+    "price": 29500,
+    "status": true,
+    "category": "Muebles",
+    "stock": 0,
+    "thumbnails": ["/img/comedor-nuevo-2.jpg"]
+  },
+  {
+    "id": "cee33c51-e864-4648-824e-82e309c884a7",
+    "title": "Silla",
+    "description": "Silla alta para bar",
+    "code": "SILL03",
+    "price": 7200,
+    "status": true,
+    "category": "Muebles",
+    "stock": 0,
+    "thumbnails": ["/img/71Z21Lmj0JL.jpg"]
+  },
+  {
+    "id": "2df0f1b4-08c8-4daf-9623-eb3340bd86c5",
+    "title": "Silla",
+    "description": "Silla para mesa de lujo",
+    "code": "SILL96",
+    "price": 12200,
+    "status": true,
+    "category": "Muebles",
+    "stock": 0,
+    "thumbnails": ["/img/madame-royale-silla-sala-de-estar-3.jpg"]
+  },
+  {
+    "id": "a6a971de-c3aa-418d-8e04-a739e7adc09d",
+    "title": "Boligrafo",
+    "description": "Lapicero de escritura",
+    "code": "BOLIG",
+    "price": 8700,
+    "status": true,
+    "category": "Utiles",
+    "stock": 3,
+    "thumbnails": ["/img/boligrafo-de-lujo-expert.jpg"]
+  },
+  {
+    "id": "09727282-da70-46b3-bcc2-80829f890dea",
+    "title": "Mazda6e",
+    "description": "Nuevo Mazda 6e 100% Eléctrico",
+    "code": "MAZ6e",
+    "price": 350000,
+    "status": true,
+    "category": "Electrico",
+    "stock": 2,
+    "thumbnails": ["/img/Mazda6e-250.jpg"]
+  },
+  {
+    "id": "2b259240-bd69-47ea-93ac-c0705f5a5d2b",
+    "title": "Seal BYD",
+    "description": "BYD Seal Sedán deportivo",
+    "code": "BYDSL",
+    "price": 385000,
+    "status": true,
+    "category": "Electrico",
+    "stock": 1,
+    "thumbnails": ["/img/Carro-electrico-BYD-seal.jpg"]
+  }
+]

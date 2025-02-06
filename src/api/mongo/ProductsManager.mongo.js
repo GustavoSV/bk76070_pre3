@@ -13,6 +13,9 @@ class ProductsManager {
   async getProductbyId(pid) {
     try {
       const one = await productModel.findById(pid);
+      if (!one) {
+        throw new Error('Product not found');
+      }
       return one;
     } catch (error) {
       throw new Error('Error getting product by id');
@@ -24,7 +27,8 @@ class ProductsManager {
       const one = await productModel.create(product);
       return one;
     } catch (error) {
-      throw new Error('Error creating product');
+      console.log('createProduct - Error detallado:', error.message);
+      throw new Error(`Error creating product: ${error.message}`);
     }
   }
 
