@@ -1,29 +1,62 @@
-<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="/css/estilos.css">
-  <title>Mi Tienda Online | {{ title }}</title>
-</head>
-<body>
-  
-  <nav class="brown darken-3">
-    <div class="nav-wrapper container">
-      <a href="/" class="brand-logo">Cars Shop</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/realtimeproducts">realTimeProducts</a></li>
-        <li><a href="accesorios.html">Accesorios</a></li>
-        <li><a href="cantactenos.html">Contáctenos</a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  <div class="container">
-    {{{ body }}}
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <link rel="stylesheet" href="/css/estilos.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Mi Tienda Online | {{title}}</title>
+  </head>
+  <body>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
+    <nav class="brown darken-3">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">Music Shop</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+          <!-- Dropdown Trigger <i class="material-icons right"> </i>-->
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-menu">Categorias</a>
+          </li>
+
+          <li><a href="/realtimeproducts">realTimeProducts</a></li>
+          <li><a href="/carts/67a52b9b0d8d2a60196a0bf0">Carrito</a></li>
+          <li><a href="cantactenos.html">Contáctenos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      {{{body}}}
+    </div>
+
+    <!-- Dropdown Structure -->
+    <ul id="dropdown-menu" class="dropdown-content" style="width: 500px;">
+      <li><a href="#!">Todos</a></li>
+      <li class="divider"></li> <!-- Línea divisoria -->
+      <li><a href="#!">POP</a></li>
+      <li><a href="#!">JAZZ</a></li>
+      <li><a href="#!">ROCK</a></li>
+      <li><a href="#!">ROCK EN ESPAÑOL</a></li>
+    </ul>
+    <!-- Materialize CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Materialize JS (requiere jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const dropdowns = document.querySelectorAll('.dropdown-trigger');
+        M.Dropdown.init(dropdowns, {
+          coverTrigger: false,
+          alignment: 'right'
+        });
+      });
+    </script>
+
+  </body>
 </html>

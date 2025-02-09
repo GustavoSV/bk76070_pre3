@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import mongoosepaginate from "mongoose-paginate-v2";
 
 const collection = "products";
 const productSchema = new Schema({
@@ -17,5 +18,7 @@ const productSchema = new Schema({
 {
   timestamps: true,
 });
+// esto es para paginar, agrega los metodos paginate y paginateAggregate a los modelos
+productSchema.plugin(mongoosepaginate);
 
 export const productModel = model(collection, productSchema);

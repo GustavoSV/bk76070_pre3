@@ -6,8 +6,20 @@ export const productsRouter = Router();
 
 // GET /api/products
 productsRouter.get('/', async (req, res) => {
-  const products = await productsManager.getProducts();
-  res.status(200).json(products);
+  // const products = await productsManager.getProducts();
+  // res.status(200).json(products);
+  const { page = 1, limit = 6, category = '' } = req.query;
+  
+  const products = await productsManager.getProductsPaginated(page, limit, category);
+  res.status(200).json({
+    data: products.docs,
+    totalPages: products.totalPages,
+    prevPage: products.prevPage,
+    nextPage: products.nextPage,
+    page: products.page,
+    hasPrevPage: products.hasPrevPage,
+    hasNextPage: products.hasNextPage
+  });
 });
 
 // GET /api/products/:pid

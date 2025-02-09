@@ -25,15 +25,19 @@ app.engine(
   "hbs", 
   handlerbars.engine({ 
     defaultLayout: "main",
-    extname: ".hbs" 
+    extname: ".hbs",
+    runtimeOptions: {
+      allowProtoPropertiesByDefault: true,
+      allowProtoMethodsByDefault: true
+    }
   })
 );
+  
+// Configuración del motor de plantillas
+app.set("view engine", "hbs");
 
 // Cofiguración de la carpeta de vistas
 app.set("views", path.resolve(__dirname, "views"));
-
-// Configuración del motor de plantillas
-app.set("view engine", "hbs");
 
 // Routes - API endpoints
 app.use("/api/products", productsRouter);

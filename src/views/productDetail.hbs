@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col s8">
+      <div class="card">
+        <div class="card-image">
+          {{#if product.thumbnails.[0]}}
+            <img src="{{product.thumbnails.[0]}}" alt="{{product.title}}">
+          {{else}}
+            <img src="/img/Imagen por defecto.jpg" alt="{{product.title}}">
+          {{/if}}
+        </div>
+        <div class="card-content">
+          <span class="card-title">{{product.title}}</span>
+          <p><strong>Autor:</strong> {{product.author}}</p>
+          <p><strong>Categoría:</strong> {{product.category}}</p>
+          <p><strong>Idioma:</strong> {{product.lenguage}}</p>
+          <p><strong>Tipo:</strong> {{product.type}}</p>
+          <p><strong>Stock:</strong> {{product.stock}} unidades</p>
+          <p><strong>Código:</strong> {{product.code}}</p>
+          <h4 class="price teal-text">${{product.price}}</h4>
+        </div>
+        <div class="card-action">
+          <a href="/" class="btn brown darken-3">Volver</a>
+          <button class="btn brown darken-3 right">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

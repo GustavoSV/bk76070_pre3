@@ -3,3 +3,38 @@ body {
     margin: 0;
     padding: 0;
 }
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-family: "Raleway", Arial, sans-serif;
+}
+
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-container .input-field {
+    margin: 0 15px;
+}
+
+.pagination-container input[type="number"] {
+    height: 36px;
+    text-align: center;
+}
+
+/* Quitar flechas del input number */
+    .pagination-container input[type="number"]::-webkit-inner-spin-button,
+    .pagination-container input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.btn:focus {
+    background-color: #4e342e !important; /* brown darken-3 */
+}
+
+.btn:hover {
+  background-color: #3e2723 !important; /* brown darken-4 para hover */
+}

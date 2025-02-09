@@ -1,0 +1,62 @@
+<div class="container">
+  <h3 class="center-align">Mi Carrito</h3>
+  {{#if cart.products.length}}
+    <div class="row">
+      {{#each cart.products}}
+        <div class="col s12">
+          <div class="card horizontal">
+            <div class="card-image" style="max-width: 200px;">
+              {{#if this.productId.thumbnails.[0]}}
+                <img src="{{this.productId.thumbnails.[0]}}" alt="{{this.productId.title}}">
+              {{else}}
+                <img src="/img/Imagen por defecto.jpg" alt="{{this.productId.title}}">
+              {{/if}}
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title teal-text">{{this.productId.title}}</span>
+                <p class="teal-text">{{this.productId.author}}</p>
+                <p>Precio unitario: ${{this.productId.price}}</p>
+                <div class="quantity-controls">
+                  <button class="btn-floating waves-effect waves-light red decrease-quantity" data-cid="{{../cart._id}}" data-pid="{{this.productId._id}}">
+                    <i class="material-icons">remove</i>
+                  </button>
+                  <span class="quantity">{{this.quantity}}</span>
+                  <button class="btn-floating waves-effect waves-light green increase-quantity" data-cid="{{../cart._id}}" data-pid="{{this.productId._id}}">
+                    <i class="material-icons">add</i>
+                  </button>
+                </div>
+                <p class="subtotal">Subtotal: ${{this.subtotal}}</p>
+              </div>
+              <div class="card-action">
+                <button class="btn waves-effect waves-light red delete-product" data-cid="{{../cart._id}}" data-pid="{{this.productId._id}}">
+                  <i class="material-icons left">delete</i>Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Total del Carrito: ${{cart.total}}</span>
+          </div>
+          <div class="card-action">
+            <a href="/" class="btn brown darken-3">Seguir Comprando</a>
+            <button class="btn green darken-2 right">Finalizar Compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{else}}
+    <div class="card-panel">
+      <h5 class="center-align">El carrito está vacío</h5>
+      <div class="center-align">
+        <a href="/" class="btn brown darken-3">Ir a Productos</a>
+      </div>
+    </div>
+  {{/if}}
+</div>
+
+<script src="/js/cart.js"></script>

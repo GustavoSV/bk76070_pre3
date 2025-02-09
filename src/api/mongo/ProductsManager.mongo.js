@@ -10,6 +10,22 @@ class ProductsManager {
     }
   }
 
+  async getProductsPaginated(page, limit, filter) {
+    try {
+      const options = {
+        page: page,
+        limit: limit,
+        sort: { title: 1 },
+      };
+      const query = filter ? { category: filter } : {};
+
+      const paginated = await productModel.paginate(query, options);
+      return paginated;
+    } catch (error) {
+      throw new Error(`Error getting products paginated: ${error.message}`);
+    }
+  }
+
   async getProductbyId(pid) {
     try {
       const one = await productModel.findById(pid);
@@ -19,6 +35,22 @@ class ProductsManager {
       return one;
     } catch (error) {
       throw new Error('Error getting product by id');
+    }
+  }
+
+  async getProductbyIdToObject(pid) {
+    try {
+      const one = await productModel.findById(pid);
+      if (!one) {
+        throw new Error('Product not found');
+      }
+      // Convertir el documento de Mongoose a un objeto plano
+      return one.toObject();
+    } catch (error) {
+      if (error.message === 'Product not found') {
+        throw error;
+      }
+      throw new Error('Error getting product by id to Object');
     }
   }
 

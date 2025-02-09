@@ -10,14 +10,17 @@ socket.on('init', (products) => {
   const thead = document.createElement('thead');
   const trThead = document.createElement('tr');
   const th1 = document.createElement('th');
-  th1.textContent = 'Name';
+  th1.textContent = 'Title';
   const th2 = document.createElement('th');
-  th2.textContent = 'Item Name';
+  th2.textContent = 'Author';
   const th3 = document.createElement('th');
-  th3.textContent = 'Item Price';
+  th3.textContent = 'Category';
+  const th4 = document.createElement('th');
+  th4.textContent = 'Item Price';
   trThead.appendChild(th1);
   trThead.appendChild(th2);
   trThead.appendChild(th3);
+  trThead.appendChild(th4);
   thead.appendChild(trThead);
 
   const tbody = document.createElement('tbody');
@@ -41,13 +44,20 @@ function createProductItem(product) {
   td1.appendChild(strong);
   tr.appendChild(td1);
   const td2 = document.createElement('td');
-  const span = document.createElement('span');
-  span.textContent = product.description;
-  td2.appendChild(span);
+  const span2 = document.createElement('span');
+  span2.textContent = product.author;
+  td2.appendChild(span2);
   tr.appendChild(td2);
+
   const td3 = document.createElement('td');
-  td3.textContent = `$${product.price}`;
+  const span3 = document.createElement('span');
+  span3.textContent = product.category;
+  td3.appendChild(span3);
   tr.appendChild(td3);
+
+  const td4 = document.createElement('td');
+  td4.textContent = `$${product.price}`;
+  tr.appendChild(td4);
 
   const src = (product.thumbnails && product.thumbnails.length > 0) 
         ? product.thumbnails[0] 

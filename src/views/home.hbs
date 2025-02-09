@@ -1,7 +1,23 @@
-<h1>Bienvenido a la página de Productos</h1>
+<h1>Bienvenido a tu página musical!</h1>
 <div id="productsList" class="container collection-item"></div>
 {{!-- {{#each products}}
 {{/each}} --}}
+
+<div class="center-align" style="margin: 20px 0;">
+  <div class="pagination-container">
+    <button id="prevButton" class="waves-effect waves-light btn brown darken-3">
+      <i class="material-icons">chevron_left</i>
+    </button>
+    
+    <div class="input-field inline" style="width: 70px; margin: 0 15px;">
+      <input id="currentPage" type="number" class="center-align">
+    </div>
+    
+    <button id="nextButton" class="waves-effect waves-light btn brown darken-3">
+      <i class="material-icons">chevron_right</i>
+    </button>
   </div>
+  <p>Total Pages: <span id="totalPages"></span></p>
+</div>
 
 <script type="module" src="/js/home.js"></script>

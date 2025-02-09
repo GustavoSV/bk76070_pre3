@@ -34,20 +34,6 @@ class CartsManager {
       // Convertimos pid a ObjectId para poder hacer la comparación
       const objectIdPid = new mongoose.Types.ObjectId(pid);
 
-      // Buscar y actualizar en dos operaciones *************
-      // const cart = await cartsModel.findById(cid);
-      // if (!cart) {
-      //   throw new Error('Cart not found');
-      // }
-      // // Usamos equals() para comparar ObjectIds
-      // const product = cart.products.find(product => product.productId.equals(objectIdPid));
-      // if (product) {
-      //   product.quantity += quantity;
-      // } else {
-      //   cart.products.push({productId: objectIdPid, quantity});
-      // }
-      // await cart.save();
-
       // Buscar y actualizar en una sola operación *************
       const cart = await cartsModel.findOneAndUpdate(
         { _id: cid, "products.productId": objectIdPid },
